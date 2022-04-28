@@ -6,3 +6,16 @@
 .search-resault_count {
     margin: 0px 10px;
 }
+
+.repository-main_item {
+    display: ruby;
+}
+
+.repository-btn {
+    margin-left: 20px;
+}
+
+/* .repository-views_count,
+.repository-link {
+    display: none;
+} */
