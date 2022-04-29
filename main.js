@@ -25,7 +25,10 @@ search.addEventListener('input', () => {
 
 const getUser = async (repositoryName) => {
   const repository = await fetch(url + repositoryName);
-  repositoryData = await repository.json();
+  if (!repository.ok) {
+    throw new Error('cloud note fetch url')
+  }
+  repositoryData = await repository.json()
   let repositoriesCount = repositoryData.total_count;
   repositoriesCountText.textContent = repositoriesCount;
   count = 0;
@@ -38,6 +41,12 @@ const createUserCards = (repositoriesCount, repositoryValue) => {
   if (repositoriesCount > 10) {
 
     while (count < 10) {
+      createElements(repositoryValue, count);
+      count++;
+    }
+  } else if (repositoriesCount <= 10) {
+
+    while (count < repositoriesCount) {
       createElements(repositoryValue, count);
       count++;
     }
