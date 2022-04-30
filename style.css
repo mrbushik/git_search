@@ -13,7 +13,23 @@
 
 .repository-btn {
     margin-left: 20px;
+    background-color: #222;
+    color: #fff;
+    padding: 5px;
+    border-radius: 10px;
 }
+
+.filter-item {
+    margin-top: 10px;
+}
+
+#popular-btn {
+    padding: 5px;
+    background-color: #586e5e;
+    color: #fff;
+    border-radius: 10px;
+}
+
 
 /* .repository-views_count,
 .repository-link {
