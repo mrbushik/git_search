@@ -1,10 +1,11 @@
 const url = "https://api.github.com/search/repositories?q=";
 
-const main = document.getElementById('main-list');
+const mainList = document.getElementById('main-list');
 const search = document.getElementById('search');
 const repositoriesCountText = document.querySelector('.search-resault_count');
 const checkPopularRepository = document.getElementById('popular-btn');
 const jsBtn = document.getElementById('js-btn');
+const loading = document.querySelector('.loading');
 
 let repositoryBtn;
 let repositoryData;
@@ -12,16 +13,26 @@ let count = 0;
 let timer;
 
 const searchElement = document.createElement('div');
-main.append(searchElement);
+mainList.append(searchElement);
 
 
-search.addEventListener('input', () => {
+search.addEventListener('input', (e) => {
+
   const searchText = search.value;
+
+  if (searchText === '') {
+    deleteElements();
+    repositoriesCountText.textContent = '0';
+    return;
+  }
+
   clearTimeout(timer);
+  loading.style.display = 'block';
   timer = setTimeout(() => {
     deleteElements();
     getUser(searchText);
-  }, 500);
+  }, 1000);
+
 
 });
 
@@ -56,19 +67,22 @@ jsBtn.addEventListener('click', () => {
 });
 
 
-main.addEventListener('click', e => {
+mainList.addEventListener('click', e => {
   const userInfoElement = document.querySelectorAll('.repository-info');
+  const moreBtn = document.querySelectorAll('.repository-btn')
 
   if (e.target.tagName === 'A') {
 
     repositoryBtn.forEach((item, i) => {
 
       if (e.target === item) {
+        moreBtn[i].style.display = 'none';
         renderDescription(repositoryData, i, userInfoElement);
       }
     });
   }
 });
+
 
 checkPopularRepository.addEventListener('click', () => {
   if (repositoryData === undefined) {
@@ -148,6 +162,8 @@ const createMostViewedElement = (repositoryValue, i) => {
 
 
 const createElements = (repositoryValue, i = 0) => {
+  loading.style.display = 'none';
+
   const element = document.createElement('div');
   element.className = "element";
   element.innerHTML = `<div class="repository-info">
