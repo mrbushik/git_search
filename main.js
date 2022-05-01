@@ -5,10 +5,11 @@ const search = document.getElementById('search');
 const repositoriesCountText = document.querySelector('.search-resault_count');
 const checkPopularRepository = document.getElementById('popular-btn');
 const jsBtn = document.getElementById('js-btn');
+
 let repositoryBtn;
 let repositoryData;
 let count = 0;
-
+let timer;
 
 const searchElement = document.createElement('div');
 main.append(searchElement);
@@ -16,9 +17,12 @@ main.append(searchElement);
 
 search.addEventListener('input', () => {
   const searchText = search.value;
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    deleteElements();
+    getUser(searchText);
+  }, 500);
 
-  deleteElements();
-  getUser(searchText);
 });
 
 

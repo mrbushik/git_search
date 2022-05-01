@@ -23,7 +23,8 @@
     margin-top: 10px;
 }
 
-#popular-btn {
+#popular-btn,
+#js-btn {
     padding: 5px;
     background-color: #586e5e;
     color: #fff;
