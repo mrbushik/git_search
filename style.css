@@ -8,9 +8,29 @@
     margin-top: 50px;
 }
 
+.input-rectangle {
+    background-color: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    display: flex;
+    position: absolute;
+
+}
+
+#search {
+    border: none;
+    outline: none;
+    background: none;
+    color: #fff;
+}
+
 .search-resault {
     display: flex;
-    margin-top: 20px;
+    padding-top: 70px;
+    color: #222;
+    font-size: 16px;
+    padding-bottom: 20px;
 }
 
 .search-resault_count {
@@ -35,12 +55,13 @@
 
 #popular-btn,
 #js-btn {
-    padding: 5px;
+    padding: 5px 10px;
     background-color: #586e5e;
     color: #fff;
     border-radius: 10px;
     cursor: pointer;
     margin-right: 20px;
+    text-decoration: none;
 }
 
 

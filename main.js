@@ -38,15 +38,16 @@ search.addEventListener('input', (e) => {
 
 
 jsBtn.addEventListener('click', () => {
+
   if (repositoryData === undefined) {
     return;
   }
   const repositoryLength = repositoryData.items.length;
   const languageArr = [];
-
   const resaultArr = [];
-  let counter = 0;
   const findValue = 'JavaScript';
+
+  let counter = 0;
 
   while (counter < repositoryLength) {
     languageArr.push(repositoryData.items[counter].language);
@@ -68,7 +69,7 @@ jsBtn.addEventListener('click', () => {
 
 
 mainList.addEventListener('click', e => {
-  const userInfoElement = document.querySelectorAll('.repository-info');
+  const repositoryInfoElement = document.querySelectorAll('.repository-info');
   const moreBtn = document.querySelectorAll('.repository-btn')
 
   if (e.target.tagName === 'A') {
@@ -77,7 +78,7 @@ mainList.addEventListener('click', e => {
 
       if (e.target === item) {
         moreBtn[i].style.display = 'none';
-        renderDescription(repositoryData, i, userInfoElement);
+        renderDescription(repositoryData, i, repositoryInfoElement);
       }
     });
   }
