@@ -4,6 +4,11 @@
     padding: 0 15px;
 }
 
+h2 {
+    margin-bottom: 0;
+
+}
+
 #form {
     margin-top: 50px;
 }
@@ -15,7 +20,6 @@
     padding: 5px 20px;
     display: flex;
     position: absolute;
-
 }
 
 #search {
@@ -47,6 +51,7 @@
     color: #fff;
     padding: 5px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .filter-item {
@@ -64,13 +69,16 @@
     text-decoration: none;
 }
 
+.repository-info {
+    margin-bottom: 10px;
+}
 
 .loading {
     display: none;
 }
 
-.close-btn {
-    display: none;
+.repository-link {
+    color: #586e5e;
 }
 
 .loader {

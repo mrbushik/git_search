@@ -90,7 +90,7 @@ const renderDescription = (repositoryData, i, parrantItem) => {
                            <p class="repository-views_count">Просмотры ${repositoryData.items[i].watchers}</p>
                            <p class="repository-views_count">Доступ ${repositoryData.items[i].visibility}</p>
                            <p class="repository-views_count">Преобладающий язык ${repositoryData.items[i].language}</p>
-                           <p class="repository-link">Ссылка: <a href="${repositoryData.items[i].html_url}">
+                           <p class="repository-link">Ссылка: <a class="repository-link" href="${repositoryData.items[i].html_url}">
                             ${repositoryData.items[i].html_url}</a></p>
                          </div>`;
 
