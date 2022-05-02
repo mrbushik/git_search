@@ -118,6 +118,7 @@ const init = () => {
     }
 
     if (!searchedRepo) {
+      usingLoader(false);
       deleteElements();
       repositoriesCountText.textContent = '0';
       return;
